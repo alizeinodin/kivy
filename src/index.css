@@ -21,6 +21,83 @@ body {
     src: url("../src/fonts/Sahel-FD.ttf") format("truetype");
   }
 }
+@font-face {
+  font-family: "Vazirmatn Thin";
+  src: url('../src/fonts/fonts/webfonts/Vazirmatn-Thin.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn ExtraLight";
+  src: url('../src/fonts/fonts/webfonts/Vazirmatn-ExtraLight.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn Light";
+  src: url('../src/fonts/fonts/webfonts/Vazirmatn-Light.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn Regular";
+  src: url('../src/fonts/fonts/webfonts/Vazirmatn-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn Medium";
+  src: url('../src/fonts/fonts/webfonts/Vazirmatn-Medium.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn SemiBold";
+  src: url('../src/fonts/fonts/webfonts/Vazirmatn-SemiBold.woff2') format('woff2');   
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn Bold";
+  src: url('../src/fonts/fonts/webfonts/Vazirmatn-Bold.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn ExtraBold";
+  src: url('../src/fonts/fonts/webfonts/Vazirmatn-ExtraBold.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn Black";
+  src: url('../src/fonts/fonts/webfonts/Vazirmatn-Black.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SGKara SemiBold";
+  src: url('../src/fonts/SGKara-SemiBold_p30download.com.ttf') format("truetype");
+ 
+}
+@font-face {
+  font-family: "SGKara Regular";
+  src: url('../src/fonts/SGKara-Regular_p30download.com.ttf') format("truetype");
+}
+@font-face {
+  font-family: "SGKara Light";
+  src: url('../src/fonts/SGKara-Light_p30download.com.ttf') format("truetype");
+}
+
+
 
 .grad {
   background-image: linear-gradient(
