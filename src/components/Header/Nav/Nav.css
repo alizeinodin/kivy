@@ -1,0 +1,108 @@
+.NavContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  height: 48px;
+  width: 90vw;
+  background: transparent;
+  margin: auto;
+  margin-top: 20px;
+  transition: all 1s;
+}
+.NavBtn {
+  display: none;
+  margin-top: 20px;
+}
+.NavBtnLine {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: black;
+  border-radius: 2px;
+  margin: 12px;
+  position: relative;
+  transition: all 200ms;
+}
+.NavBtnLineActive {
+  background: transparent;
+}
+.NavBtnLine::after,
+.NavBtnLine::before {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 25px;
+  height: 2px;
+  border-radius: 20px;
+  background-color: black;
+  left: 0;
+  transition: all 250ms;
+}
+.NavBtnLine::after {
+  top: -8px;
+}
+.NavBtnLine::before {
+  top: 8px;
+}
+.NavBtnLineActive::after {
+  transform: rotate(45deg);
+  background-color: white;
+  top: 0px;
+}
+.NavBtnLineActive::before {
+  transform: rotate(-45deg);
+  background-color: white;
+  top: 0px;
+}
+.NavLinks {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 55vw;
+  transition: all 250ms;
+}
+.NavLink:nth-child(1) {
+  font-family: "SGKara SemiBold";
+  font-size: 18px;
+}
+.NavLink {
+  font-family: "Vazirmatn Regular";
+  font-size: 14px;
+  color: black;
+}
+.NavContainerActive {
+  background-color: #1b6563;
+}
+@media screen and (max-width: 768px) {
+  .NavContainer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    flex-direction: column;
+    width: 25vw;
+    height: 100vh;
+    margin-top: 0;
+  }
+  .NavBtn {
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+  .NavLinks {
+    position: absolute;
+    top: 32px;
+    right: 8px;
+    display: none;
+    flex-direction: column;
+    text-align: right;
+    margin-top: 20px;
+    
+  }
+  .NavLink {
+    margin-bottom: 12px;
+    color: white;
+  }
+}
