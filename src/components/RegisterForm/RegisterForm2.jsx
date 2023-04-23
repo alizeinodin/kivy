@@ -3,7 +3,7 @@ import { BsPersonVcardFill } from "react-icons/bs";
 import { MdContactPhone } from "react-icons/md";
 import { BiMaleFemale } from "react-icons/bi";
 import { GoUnverified } from "react-icons/go";
-import logo from "../logo.png";
+import logo from "../../logo.png";
 
 function RegisterForm2() {
   return (
