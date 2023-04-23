@@ -1,10 +1,16 @@
 import RegisterForm from "./components/RegisterForm/RegisterForm";
-
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 function App() {
   return (
-    <div className='w-full h-screen bg-[#616473] flex items-center'>
-      <RegisterForm />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<RegisterForm />} />
+        <Route path="/Register" element={<RegisterForm />} />
+      </Routes>
+    </Router>
+    // <div className='w-full h-screen bg-[#616473] flex items-center'>
+    //   <RegisterForm />
+    // </div>
   );
 }
 
