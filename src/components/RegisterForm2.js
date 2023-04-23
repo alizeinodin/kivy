@@ -5,7 +5,7 @@ import { BiMaleFemale } from "react-icons/bi";
 import { GoUnverified } from "react-icons/go";
 import logo from "../logo.png";
 
-function Form() {
+function RegisterForm2() {
   return (
     <div className='grad w-5/6 mx-auto py-16 md:px-40 rounded-3xl text-white flex justify-center items-center md:items-stretch flex-col gap-10 relative'>
       <img src={logo} className='w-32' />
@@ -16,10 +16,10 @@ function Form() {
             <p className='text-primaryColor2 text-right'>نام و نام خانوادگی</p>
             <input
               type='text'
-              className='text-[#dcdde4] text-base bg-transparent focus:outline-0 group'
+              className='text-[#2b5480] text-base bg-transparent focus:outline-0 group'
             />
           </div>
-          <BsPersonVcardFill className='text-[#B9BABE] text-4xl pl-2 hover:cursor-pointer' />
+          <BsPersonVcardFill className='text-[#2b5480] text-4xl pl-2 hover:cursor-pointer' />
         </div>
 
         <div className='bg-primaryColor rounded-2xl px-2 flex items-center justify-between min-w-[20rem] md:max-w-xl border-2 border-transparent input-focus'>
@@ -27,10 +27,10 @@ function Form() {
             <p className='text-primaryColor2 text-right'>شماره دانشجویی</p>
             <input
               type='text'
-              className='text-[#dcdde4] text-base bg-transparent focus:outline-0'
+              className='text-[#2b5480] text-base bg-transparent focus:outline-0'
             />
           </div>
-          <GoUnverified className='text-[#B9BABE] text-4xl pl-2 hover:cursor-pointer' />
+          <GoUnverified className='text-[#2b5480] text-4xl pl-2 hover:cursor-pointer' />
         </div>
 
         <div className='bg-primaryColor rounded-2xl px-2 flex items-center justify-between min-w-[20rem] md:max-w-xl border-2 border-transparent input-focus'>
@@ -38,10 +38,10 @@ function Form() {
             <p className='text-primaryColor2 text-right'>شماره تلفن</p>
             <input
               type='text'
-              className='text-[#dcdde4] text-base bg-transparent focus:outline-0'
+              className='text-[#2b5480] text-base bg-transparent focus:outline-0'
             />
           </div>
-          <MdContactPhone className='text-[#B9BABE] text-4xl pl-2 hover:cursor-pointer' />
+          <MdContactPhone className='text-[#2b5480] text-4xl pl-2 hover:cursor-pointer' />
         </div>
 
         <div className='bg-primaryColor rounded-2xl px-2 flex items-center justify-between min-w-[20rem] md:max-w-xl border-2 border-transparent input-focus'>
@@ -59,9 +59,9 @@ function Form() {
                       id='html'
                       name='type'
                       type='radio'
-                      class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-[#1E8FF2] transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-[#1E8FF2] checked:before:bg-[#1E8FF2] hover:before:opacity-10"
+                      class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-[#2b5480] transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-[#2b5480] checked:before:bg-[#2b5480] hover:before:opacity-10"
                     />
-                    <div class='pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-[#1E8FF2] opacity-0 transition-opacity peer-checked:opacity-100'>
+                    <div class='pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-[#2b5480] opacity-0 transition-opacity peer-checked:opacity-100'>
                       <svg
                         xmlns='http://www.w3.org/2000/svg'
                         class='h-3.5 w-3.5'
@@ -94,9 +94,9 @@ function Form() {
                       id='react'
                       name='type'
                       type='radio'
-                      class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-[#1E8FF2] transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-[#1E8FF2] checked:before:bg-[#1E8FF2] hover:before:opacity-10"
+                      class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-[#2b5480] transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-[#2b5480] checked:before:bg-[#2b5480] hover:before:opacity-10"
                     />
-                    <div class='pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-[#1E8FF2] opacity-0 transition-opacity peer-checked:opacity-100'>
+                    <div class='pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-[#2b5480] opacity-0 transition-opacity peer-checked:opacity-100'>
                       <svg
                         xmlns='http://www.w3.org/2000/svg'
                         class='h-3.5 w-3.5'
@@ -122,11 +122,11 @@ function Form() {
               </div>
             </div>
           </div>
-          <BiMaleFemale className='text-[#B9BABE] text-4xl pl-2 hover:cursor-pointer' />
+          <BiMaleFemale className='text-[#2b5480] text-4xl pl-2 hover:cursor-pointer' />
         </div>
 
         <div className='flex justify-between gap-10 items-center min-w-[20rem] md:max-w-xl'>
-          <button className='bg-[#1E8FF2] hover:bg-[#0b71d0] transition-all p-4 rounded-full w-full text-base'>
+          <button className='bg-white text-[#2b5480] hover:bg-[#0b71d0] transition-all p-4 rounded-full w-full text-base'>
             ثبت نام
           </button>
           <button className='bg-[#555B69] hover:bg-[#41454f] transition-all p-4 rounded-full w-full text-base'>
@@ -138,4 +138,4 @@ function Form() {
   );
 }
 
-export default Form;
+export default RegisterForm2;
