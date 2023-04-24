@@ -3,7 +3,7 @@ import basuImg from "../../imgs/tempimg/download.jpg";
 
 const EventPlace = () => {
   return (
-    <div className="px-16 md:px-28 pt-10 md:pt-16">
+    <div className="px-7 md:px-28 pt-10 md:pt-16">
       <div className="flex items-center mb-8 md:mb-14">
         <img src={introIcon} className="w-4 h-4 ml-4" />
         <h2 className="text-2xl text-center">محل برگذاری دوره</h2>
