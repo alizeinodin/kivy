@@ -1,9 +1,10 @@
 import RegisterForm from "./components/RegisterForm/RegisterForm";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Nav from "./components/Header/Nav/Nav";
+import Slider from "./components/IntroducingInstructor/Slider/Slider";
 function App() {
   return (
-    <Nav />
+    <Slider />
     // <Router>
     //   <Routes>
     //     <Route path="/" element={<RegisterForm />} />
