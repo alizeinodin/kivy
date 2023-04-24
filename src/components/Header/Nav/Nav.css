@@ -8,7 +8,7 @@
   background: transparent;
   margin: auto;
   margin-top: 20px;
-  transition: all 1s;
+  transition: all 800ms;
 }
 .NavBtn {
   display: none;
@@ -75,15 +75,27 @@
 .NavContainerActive {
   background-color: #1b6563;
 }
+@media screen and (max-width: 2560px) {
+  .NavContainerActive {
+    background: transparent;
+  }
+  .NavLinks{
+    display: flex !important;
+  }
+}
 @media screen and (max-width: 768px) {
   .NavContainer {
     position: absolute;
     top: 0;
     right: 0;
     flex-direction: column;
-    width: 25vw;
+    width: 50vw;
     height: 100vh;
     margin-top: 0;
+  }
+
+  .NavContainerActive {
+    background-color: #1b6563;
   }
   .NavBtn {
     display: block;
@@ -98,11 +110,10 @@
     display: none;
     flex-direction: column;
     text-align: right;
-    margin-top: 20px;
-    
+    margin-top: 24px;
   }
   .NavLink {
-    margin-bottom: 12px;
+    margin-bottom: 16px;
     color: white;
   }
 }

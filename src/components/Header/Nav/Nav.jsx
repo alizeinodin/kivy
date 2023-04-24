@@ -1,43 +1,184 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect, useLayoutEffect } from "react";
 import "./Nav.css";
 const Nav = () => {
+  const navContainer = useRef(null);
+  // useLayoutEffect(() => {
+  //   const navTop = navContainer.current.getBoundingClientRect().top;
+  //   const onScroll = () => {
+  //     if (navTop < window.scrollY && window.innerWidth > 768) {
+  //       console.log("ok");
+  //       navContainer.current.style.position = "fixed";
+  //       navContainer.current.style.zIndex = 1000;
+  //       navContainer.current.style.width = "100vw";
+  //       navContainer.current.style.marginTop = "0";
+  //     } else {
+  //       navContainer.current.style.position = "relative";
+  //     }
+  //   };
+  //   window.addEventListener("scroll", onScroll);
+  //   return () => window.removeEventListener("scroll", onScroll);
+  // }, []);
+
   const linkRef = useRef(null);
-  const linekRef = useRef(null);
-  const container = useRef(null);
+
   const [showMenu, setShowMenu] = useState(true);
   return (
-    <nav className="NavContainer" ref={container}>
-      <div
-        className="NavBtn"
-        onClick={() => {
-          linkRef.current.style.display = showMenu ? "block" : "none";
-          linekRef.current.className = showMenu
-            ? "NavBtnLine NavBtnLineActive"
-            : "NavBtnLine";
-            container.current.className = showMenu
-            ? "NavContainer NavContainerActive"
-            : "NavContainer";
-          setShowMenu(!showMenu);
-        }}
+    <div>
+      <nav
+        className={`NavContainer ${showMenu ? "NavContainerActive" : null}`}
+        ref={navContainer}
       >
-        <span className="NavBtnLine" ref={linekRef}></span>
-      </div>
-      <ul className="NavLinks" ref={linkRef}>
-        <li
-          className="NavLink"
+        <div
+          className="NavBtn"
           onClick={() => {
-            console.log("here");
+            linkRef.current.style.display = showMenu ? "flex" : "none";
+            setShowMenu(!showMenu);
           }}
         >
-          کیوی
-        </li>
-        <li className="NavLink">معرفی دوره</li>
-        <li className="NavLink">سرفصل‌های دوره</li>
-        <li className="NavLink">مدرس دوره</li>
-        <li className="NavLink">راه‌های ارتباطی</li>
-        <li className="NavLink">ثبت نام</li>
-      </ul>
-    </nav>
+          <span
+            className={`NavBtnLine ${showMenu ? "NavBtnLineActive" : null}`}
+          ></span>
+        </div>
+        <ul className="NavLinks" ref={linkRef}>
+          <li
+            className="NavLink"
+            onClick={() => {
+              console.log("here");
+            }}
+          >
+            کیوی
+          </li>
+          <li className="NavLink">معرفی دوره</li>
+          <li className="NavLink">سرفصل‌های دوره</li>
+          <li className="NavLink">مدرس دوره</li>
+          <li className="NavLink">راه‌های ارتباطی</li>
+          <li className="NavLink">ثبت نام</li>
+        </ul>
+      </nav>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+      <div className="">vfdgdfgdfgf</div>
+    </div>
   );
 };
 
