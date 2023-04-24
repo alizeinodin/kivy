@@ -23,162 +23,37 @@ const Nav = () => {
 
   const [showMenu, setShowMenu] = useState(true);
   return (
-    <div>
-      <nav
-        className={`NavContainer ${showMenu ? "NavContainerActive" : null}`}
-        ref={navContainer}
+    <nav
+      className={`NavContainer ${showMenu ? "NavContainerActive" : null}`}
+      ref={navContainer}
+    >
+      <div
+        className="NavBtn"
+        onClick={() => {
+          linkRef.current.style.display = showMenu ? "flex" : "none";
+          setShowMenu(!showMenu);
+        }}
       >
-        <div
-          className="NavBtn"
+        <span
+          className={`NavBtnLine ${showMenu ? "NavBtnLineActive" : null}`}
+        ></span>
+      </div>
+      <ul className="NavLinks" ref={linkRef}>
+        <li
+          className="NavLink"
           onClick={() => {
-            linkRef.current.style.display = showMenu ? "flex" : "none";
-            setShowMenu(!showMenu);
+            console.log("here");
           }}
         >
-          <span
-            className={`NavBtnLine ${showMenu ? "NavBtnLineActive" : null}`}
-          ></span>
-        </div>
-        <ul className="NavLinks" ref={linkRef}>
-          <li
-            className="NavLink"
-            onClick={() => {
-              console.log("here");
-            }}
-          >
-            کیوی
-          </li>
-          <li className="NavLink">معرفی دوره</li>
-          <li className="NavLink">سرفصل‌های دوره</li>
-          <li className="NavLink">مدرس دوره</li>
-          <li className="NavLink">راه‌های ارتباطی</li>
-          <li className="NavLink">ثبت نام</li>
-        </ul>
-      </nav>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-      <div className="">vfdgdfgdfgf</div>
-    </div>
+          کیوی
+        </li>
+        <li className="NavLink">معرفی دوره</li>
+        <li className="NavLink">سرفصل‌های دوره</li>
+        <li className="NavLink">مدرس دوره</li>
+        <li className="NavLink">راه‌های ارتباطی</li>
+        <li className="NavLink">ثبت نام</li>
+      </ul>
+    </nav>
   );
 };
 
