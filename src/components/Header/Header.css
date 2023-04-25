@@ -1,0 +1,52 @@
+.Header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.Header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  height: 200px;
+}
+.Header-title {
+  width: 220px;
+  font-size: 18px;
+  color: black;
+  font-family: "SGKara SemiBold";
+}
+.Header-description {
+  font-size: 14px;
+  font-family: "Vazirmatn Regular";
+  color: #2d2d2d;
+  width: 240px;
+}
+.Header-btn {
+  background-color: #1b6563;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-family: "Vazirmatn Regular";
+  width: 120px;
+  height: 32px;
+  border-radius: 16px;
+}
+@media screen and (max-width: 768px) {
+  .Header-content {
+    padding-top: 60px;
+    height: 300px;
+  }
+  .Header-title {
+    font-size: 16px;
+  }
+  .Header-description {
+    font-size: 12px;
+  }
+  .Header-btn{
+    font-size: 12px;
+  }
+}

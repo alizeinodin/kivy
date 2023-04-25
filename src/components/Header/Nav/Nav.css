@@ -71,6 +71,7 @@
   font-family: "Vazirmatn Regular";
   font-size: 14px;
   color: black;
+  cursor: pointer;
 }
 .NavContainerActive {
   background-color: #1b6563;
@@ -79,8 +80,11 @@
   .NavContainerActive {
     background: transparent;
   }
+  .NavContainer{
+    display: flex;
+  }
   .NavLinks{
-    display: flex !important;
+    display: flex;
   }
 }
 @media screen and (max-width: 768px) {

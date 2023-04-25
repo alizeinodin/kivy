@@ -30,7 +30,7 @@ const Nav = () => {
       <div
         className="NavBtn"
         onClick={() => {
-          linkRef.current.style.display = showMenu ? "flex" : "none";
+          linkRef.current.style.display = showMenu ? "none": "flex" ;
           setShowMenu(!showMenu);
         }}
       >
