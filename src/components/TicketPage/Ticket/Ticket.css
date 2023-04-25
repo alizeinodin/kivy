@@ -1,0 +1,121 @@
+.ticket {
+  width: 330px;
+  height: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 16px;
+  background-color: #fff;
+}
+.ticket-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #001834;
+  height: 120px;
+  border-radius: 16px 16px 0 0;
+}
+.ticket-header-img {
+  height: 64px;
+  width: 64px;
+}
+.ticket-header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.ticket-header-title {
+  font-size: 14px;
+  color: #d2d2d2;
+  font-family: "Vazirmatn Light";
+}
+.ticket-header-heading {
+  font-size: 18px;
+  color: #fff;
+  font-family: "SGKara Regular";
+}
+.ticket-detail {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-top: 40px;
+  padding-right: 20px;
+}
+
+.ticket-line {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 32px;
+}
+.circle-right {
+  content: "";
+  width: 20px;
+  height: 40px;
+  border-radius: 20px 0 0 20px;
+  background-color: #eaeaea;
+}
+.line {
+  content: "";
+  width: 330px;
+  border: 1px dashed gray;
+}
+.circle-left {
+  content: "";
+  width: 20px;
+  height: 40px;
+  border-radius: 0 20px 20px 0;
+  background-color: #eaeaea;
+}
+
+.ticket-barcode {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-bottom: 16px;
+}
+.ticket-barcode-img {
+  height: 64px;
+  width: 64px;
+}
+.ticket-barcode-code {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.ticket-barcode-code-title {
+  font-size: 12px;
+  color: #000;
+  font-family: "Vazirmatn Regular";
+}
+.barcode {
+  width: 130px;
+  height: 24px;
+  border: 1px solid gray;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  cursor: pointer;
+}
+.barcode-code {
+  font-size: 12px;
+  color: #000;
+}
+.copy-icon {
+  color: #000 !important;
+}
+@media screen and (max-width:480px) {
+  .ticket {
+    width: 300px;
+    height: 360px;
+    overflow-x: hidden;
+  }
+}
