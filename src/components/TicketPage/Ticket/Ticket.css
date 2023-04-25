@@ -13,6 +13,35 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  background: radial-gradient(
+      circle at top,
+      transparent 60%,
+      #1a2f48 61%,
+      #1a2f48 66%,
+      transparent 67%
+    ),
+    radial-gradient(
+      circle at bottom,
+      transparent 60%,
+      #172c45 61%,
+      #172c45 66%,
+      transparent 67%
+    ),
+    radial-gradient(
+      circle at left,
+      transparent 60%,
+      #172c45 61%,
+      #172c45 66%,
+      transparent 67%
+    ),
+    radial-gradient(
+      circle at right,
+      transparent 60%,
+      #172c45 61%,
+      #172c45 66%,
+      transparent 67%
+    );
+  background-size: 2em 2em;
   background-color: #001834;
   height: 120px;
   border-radius: 16px 16px 0 0;
@@ -112,7 +141,7 @@
 .copy-icon {
   color: #000 !important;
 }
-@media screen and (max-width:480px) {
+@media screen and (max-width: 480px) {
   .ticket {
     width: 300px;
     height: 360px;
