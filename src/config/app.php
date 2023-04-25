@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Facade;
+use NextpayPayment\Gateway;
 
 return [
 
@@ -185,6 +186,7 @@ return [
         /*
          * Package Service Providers...
          */
+        NextpayPayment\Gateway\NextpayServiceProvider::class,
 
         /*
          * Application Service Providers...
