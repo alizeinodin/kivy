@@ -23,7 +23,7 @@ return new class extends Migration {
             $table->string('seo_title');
             $table->text('meta_description')->nullable();
             $table->text('meta_keywords')->nullable();
-            $table->enum('status')->default('DRAFT');
+            $table->enum('status', ['DRAFT', 'PUBLISHED', 'PENDING'])->default('DRAFT');
             $table->timestamps();
         });
     }
