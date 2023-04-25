@@ -7,6 +7,7 @@ import IntroducingInstructor from './components/IntroducingInstructor/Introducin
 function App() {
   return (
    <IntroducingInstructor/>
+  // <Slider/>
     // <Router>
     //   <Routes>
     //     <Route path="/" element={<RegisterForm />} />

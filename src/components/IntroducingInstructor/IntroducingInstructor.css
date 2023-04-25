@@ -1,0 +1,51 @@
+.IntroducingInstructor {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+  height: 400px;
+  box-sizing: border-box;
+}
+.IntroducingInstructor-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding-right: 24px;
+}
+.IntroducingInstructor-header-img {
+  width: 10px;
+  height: 10px;
+  margin-left: 4px;
+}
+.IntroducingInstructor-header-title {
+  font-size: 14px;
+  color: black;
+  font-family: "SGKara SemiBold";
+}
+.IntroducingInstructor-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  margin-top: 10px;
+}
+.IntroducingInstructor-content-img {
+  width: 200px;
+  height: 253px;
+  align-self: center;
+}
+@media screen and (max-width: 576px) {
+  .IntroducingInstructor {
+    height: auto;
+  }
+  .IntroducingInstructor-content {
+    flex-direction: column;
+    justify-content: space-between;
+    height: 90%;
+  }
+  .IntroducingInstructor-content-img {
+    margin-bottom: 40px;
+  }
+}
