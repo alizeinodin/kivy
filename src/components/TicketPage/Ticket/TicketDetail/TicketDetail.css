@@ -1,0 +1,16 @@
+.TicketDetail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.TicketDetail-title {
+  font-size: 14px;
+  color: #2d2d2d;
+  font-family: "Vazirmatn Light";
+}
+.TicketDetail-content {
+  font-size: 16px;
+  color: #000;
+  font-family: "Vazirmatn Regular";
+}

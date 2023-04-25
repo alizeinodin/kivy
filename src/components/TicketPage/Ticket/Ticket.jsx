@@ -1,4 +1,24 @@
+import TicketDetail from "./TicketDetail/TicketDetail";
+import React, { useState } from "react";
 const Ticket = () => {
+  const [detail, setDetail] = useState([
+    {
+      id: 1,
+      title: "نام و نام خانوادگی",
+      content: "دانشجوی بوعلی",
+    },
+    {
+      id: 2,
+      title: "تاریخ برگزاری",
+      content: "دهم اردیبهشت 1402",
+    },
+    {
+      id: 3,
+      title: "محل برگزاری",
+      content: "کارگاه کامپیوتر دانشکده مهندسی",
+    },
+    { id: 4, title: "مدرس دوره", content: "محمد مرادی " },
+  ]);
   return (
     <div className="ticket">
       <div className="ticket-header">
@@ -9,7 +29,11 @@ const Ticket = () => {
         </div>
       </div>
       {/* --------------------------------------------------- */}
-      <div className="ticket-detail"></div>
+      <div className="ticket-detail">
+        {detail.map((item) => (
+          <TicketDetail key={item.id} {...item} />
+        ))}
+      </div>
       {/* --------------------------------------------- */}
       <div className="ticket-line"></div>
       {/* --------------------------------------------------- */}
@@ -19,7 +43,7 @@ const Ticket = () => {
         <div className="ticket-barcode-code">
           <span>کد رهگیری ثبت نام</span>
           <div className="barcode">
-            <span> 12358746985325 </span>
+            <span> 1236985325 </span>
             {/* icon for copy */}
           </div>
         </div>
