@@ -4,9 +4,10 @@ import Nav from "./components/Header/Nav/Nav";
 import Slider from "./components/IntroducingInstructor/Slider/Slider";
 import TicketPage from "./components/TicketPage/TicketPage";
 import IntroducingInstructor from './components/IntroducingInstructor/IntroducingInstructor'
+import Header from "./components/Header/Header";
 function App() {
   return (
-   <IntroducingInstructor/>
+   <Header/>
   // <Slider/>
     // <Router>
     //   <Routes>
