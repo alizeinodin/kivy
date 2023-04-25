@@ -2,6 +2,7 @@ import React from "react";
 import Ticket from "./Ticket/Ticket";
 import TicketPdf from "./TicketPdf/TicketPdf";
 import { PDFDownloadLink } from "@react-pdf/renderer";
+import TicketPdfDetail from "./TicketPdf/TicketPdfDetail/TicketPdfDetail";
 import { Link } from "react-router-dom";
 import './TicketPage.css'
 const TicketPage = () => {

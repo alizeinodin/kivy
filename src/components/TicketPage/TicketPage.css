@@ -26,6 +26,7 @@
   align-items: center;
   justify-content: center;
   box-shadow: 0px 3px 12px #888;
+  cursor: pointer;
 }
 .TicketPage-link {
     font-size: 12px;

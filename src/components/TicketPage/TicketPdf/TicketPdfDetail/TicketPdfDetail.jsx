@@ -1,18 +1,47 @@
 import {
   View,
   Text,
-  Image,
+  StyleSheet,
+  Font,
   Document,
   Page,
-  StyleSheet,
 } from "@react-pdf/renderer";
-const TicketDetail = () => {
+import vazirRegular from "./../../../../fonts/fonts/ttf/Vazirmatn-Regular.ttf";
+import vazirLight from "./../../../../fonts/fonts/ttf/Vazirmatn-Light.ttf";
+
+const TicketPdfDetail = ({
+  title = "نام و نام خانوادگی",
+  content = "دانشجوی بوعلی",
+}) => {
+  Font.register({ family: "Vazirmatn Light", src: vazirLight });
+  Font.register({ family: "Vazirmatn Regular", src: vazirRegular });
+  const style = StyleSheet.create({
+    TicketDetail: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "flex-start",
+      justifyContent: "center",
+      width: "47%",
+      height: "100%",
+      marginLeft: "4px",
+    },
+    TicketDetailTitle: {
+      fontSize: "10px",
+      color: "#2d2d2d",
+      fontFamily: "Vazirmatn Light",
+    },
+    TicketDetailContent: {
+      fontSize: "12px",
+      color: "#000",
+      fontFamily: "Vazirmatn Regular",
+    },
+  });
   return (
-    <View>
-      <Text></Text>
-      <Text></Text>
+    <View style={style.TicketDetail}>
+      <Text style={style.TicketDetailTitle}>{title}</Text>
+      <Text style={style.TicketDetailContent}>{content}</Text>
     </View>
   );
 };
 
-export default TicketDetail;
+export default TicketPdfDetail;
