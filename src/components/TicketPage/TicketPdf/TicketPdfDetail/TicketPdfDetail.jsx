@@ -19,11 +19,9 @@ const TicketPdfDetail = ({
     TicketDetail: {
       display: "flex",
       flexDirection: "column",
-      alignItems: "flex-start",
+      alignItems: "flex-end",
       justifyContent: "center",
-      width: "47%",
-      height: "100%",
-      marginLeft: "4px",
+      marginTop: "16px",
     },
     TicketDetailTitle: {
       fontSize: "10px",
