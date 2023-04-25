@@ -1,0 +1,34 @@
+.TicketPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100vw;
+  height: 100vh;
+  background-color: #eaeaea;
+}
+.TicketPage-title {
+  font-size: 18px;
+  color: #1b6563;
+  font-family: "Vazirmatn Regular";
+}
+.TicketPage-downloadLink {
+  background-color: #1b6563;
+  width: 280px;
+  height: 36px;
+  border-radius: 24px;
+  color: white;
+  font-size: 14px;
+  font-family: "Vazirmatn Regular";
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 3px 12px #888;
+}
+.TicketPage-link {
+    font-size: 14px;
+  color: #1b6563;
+  font-family: "Vazirmatn Regular";
+}
