@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Facade;
-use NextpayPayment\Gateway;
 
 return [
 
