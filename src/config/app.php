@@ -185,7 +185,6 @@ return [
         /*
          * Package Service Providers...
          */
-        NextpayPayment\Gateway\NextpayServiceProvider::class,
 
         /*
          * Application Service Providers...
