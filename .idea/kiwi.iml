@@ -126,6 +126,8 @@
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/psr/http-message" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/psr/http-client" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/psr/container" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/shetabit/payment" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/shetabit/multipay" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -120,6 +120,8 @@
       <path value="$PROJECT_DIR$/src/vendor/psr/http-message" />
       <path value="$PROJECT_DIR$/src/vendor/psr/http-client" />
       <path value="$PROJECT_DIR$/src/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/src/vendor/shetabit/payment" />
+      <path value="$PROJECT_DIR$/src/vendor/shetabit/multipay" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />

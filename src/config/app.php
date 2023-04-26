@@ -185,6 +185,7 @@ return [
         /*
          * Package Service Providers...
          */
+        Shetabit\Payment\Provider\PaymentServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -209,7 +210,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-        // 'ExampleClass' => App\Example\ExampleClass::class,
+        'Payment' => Shetabit\Payment\Facade\Payment::class,
     ])->toArray(),
 
 ];
