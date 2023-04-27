@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: flex-start;
   height: 48px;
-  width: 90vw;
+  width: 95vw;
   background: transparent;
   margin: auto;
   margin-top: 20px;
@@ -75,6 +75,7 @@
 }
 .NavContainerActive {
   background-color: #1b6563;
+  z-index: 1000;
 }
 @media screen and (max-width: 2560px) {
   .NavContainerActive {
