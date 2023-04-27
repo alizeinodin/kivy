@@ -10,7 +10,7 @@ return [
     | You can switch to a different driver at runtime.
     |
     */
-    'default' => 'zarinpal',
+    'default' => 'nextpay',
 
     /*
     |--------------------------------------------------------------------------
@@ -118,8 +118,9 @@ return [
             'apiPurchaseUrl' => 'https://nextpay.org/nx/gateway/token',
             'apiPaymentUrl' => 'https://nextpay.org/nx/gateway/payment/',
             'apiVerificationUrl' => 'https://nextpay.org/nx/gateway/verify',
-            'merchantId' => '',
-            'callbackUrl' => 'http://yoursite.com/path/to',
+            'merchantId' => '65d94dfb-19d8-4357-bcf4-cf570abcf251',
+            // TODO : Set Callback URL
+            'callbackUrl' => 'https://yoursite.com/path/to',
             'description' => 'payment using nextpay',
         ],
         'parsian' => [
@@ -191,7 +192,7 @@ return [
             'callbackUrl' => 'http://yoursite.com/path/to',
             'description' => 'payment using poolam',
         ],
-          'sadad' => [
+        'sadad' => [
             'apiPaymentByIdentityUrl' => 'https://sadad.shaparak.ir/api/v0/PaymentByIdentity/PaymentRequest',
             'apiPaymentUrl' => 'https://sadad.shaparak.ir/api/v0/Request/PaymentRequest',
             'apiPurchaseByIdentityUrl' => 'https://sadad.shaparak.ir/vpg/api/v0/Request/PaymentRequest',
@@ -201,7 +202,7 @@ return [
             'merchantId' => '',
             'terminalId' => '',
             'callbackUrl' => '',
-            'mode' =>  'normal', // can be normal and PaymentByIdentity,
+            'mode' => 'normal', // can be normal and PaymentByIdentity,
             'PaymentIdentity' => '',
             'description' => 'payment using sadad',
         ],
@@ -291,7 +292,7 @@ return [
             'description' => 'payment using sepordeh',
         ],
 
-        'rayanpay'=>[
+        'rayanpay' => [
             'apiPurchaseUrl' => 'https://bpm.shaparak.ir/pgwchannel/startpay.mellat',
             'apiTokenUrl' => 'https://pms.rayanpay.com/api/v1/auth/token/generate',
             'apiPayStart' => 'https://pms.rayanpay.com/api/v1/ipg/payment/start',
@@ -301,7 +302,7 @@ return [
             'password' => '',
             'callbackUrl' => '',
         ],
-        'sizpay'=>[
+        'sizpay' => [
             'apiPurchaseUrl' => 'https://rt.sizpay.ir/KimiaIPGRouteService.asmx?WSDL',
             'apiPaymentUrl' => 'https://rt.sizpay.ir/Route/Payment',
             'apiVerificationUrl' => 'https://rt.sizpay.ir/KimiaIPGRouteService.asmx?WSDL',
@@ -325,7 +326,7 @@ return [
             'apiPaymentUrl' => 'https://panel.aqayepardakht.ir/startpay/',
             'apiPaymentUrlSandbox' => 'https://panel.aqayepardakht.ir/startpay/sandbox/',
             'apiVerificationUrl' => 'https://panel.aqayepardakht.ir/api/v2/verify',
-            'mode' => 'normal' , //normal | sandbox
+            'mode' => 'normal', //normal | sandbox
             'callbackUrl' => '',
             'pin' => '',
             'invoice_id' => '',
@@ -334,12 +335,12 @@ return [
             'description' => 'payment using Aqayepardakht',
         ],
         'azki' => [
-            'apiPaymentUrl'   => 'https://api.azkivam.com',
-            'callbackUrl'     => 'http://yoursite.com/path/to',
-            'fallbackUrl'     => 'http://yoursite.com/path/to',
-            'merchantId'      => '',
-            'key'             => '',
-            'description'     => 'payment using azki',
+            'apiPaymentUrl' => 'https://api.azkivam.com',
+            'callbackUrl' => 'http://yoursite.com/path/to',
+            'fallbackUrl' => 'http://yoursite.com/path/to',
+            'merchantId' => '',
+            'key' => '',
+            'description' => 'payment using azki',
         ],
         'payfa' => [
             'apiPurchaseUrl' => 'https://payment.payfa.com/v2/api/Transaction/Request',
