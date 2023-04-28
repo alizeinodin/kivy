@@ -95,12 +95,13 @@
     right: 0;
     flex-direction: column;
     width: 50vw;
-    height: 100vh;
+    height: 100%;
     margin-top: 0;
   }
 
   .NavContainerActive {
     background-color: #1b6563;
+    height: 100%;
   }
   .NavBtn {
     display: block;
