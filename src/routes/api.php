@@ -22,7 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::controller(PayController::class)->group(function () {
     Route::prefix('/payment')->group(function () {
         Route::name('payment')->group(function () {
-            Route::get('/{student}/{price}/{detail}', 'pay')
+            Route::get('/{student}/{price}/{detail?}', 'pay')
                 ->name('pay');
         });
     });
