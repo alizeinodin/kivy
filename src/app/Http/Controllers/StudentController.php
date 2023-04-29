@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Student\StoreRequest;
 use App\Models\Student;
 use Illuminate\Http\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
 
 class StudentController extends Controller
 {
@@ -27,6 +28,6 @@ class StudentController extends Controller
             ]);
         }
 
-        return response()->json($student);
+        return response()->json($student, Response::HTTP_OK);
     }
 }
