@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class DiscountCode extends Model
 {
     use HasFactory;
+
+    public function hasExpired(): bool
+    {
+        return $this->expires_at && now()->gt($this->expires_at);
+    }
+
+    public function canBeUsed(): bool
+    {
+        return is_null($this->uses) || $this->uses > 0;
+    }
 }
