@@ -9,6 +9,11 @@ class StudentTest extends TestCase
 {
     use WithFaker;
 
+    private function fakePhoneNumber(): string
+    {
+        return "0933" . mt_rand(1000000, 9999999);
+    }
+
     /**
      * Student Store
      *
@@ -19,7 +24,7 @@ class StudentTest extends TestCase
         $request = [
             'name' => $this->faker->name,
             'stn' => $this->faker->buildingNumber,
-            'phone' => $this->faker->phoneNumber,
+            'phone' => $this->fakePhoneNumber(),
             'gender' => 'male'
         ];
 
