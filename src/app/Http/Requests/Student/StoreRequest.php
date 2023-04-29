@@ -26,7 +26,7 @@ class StoreRequest extends FormRequest
         return [
             'name' => 'required|string|max:100',
             'stn' => 'integer',
-            'phone' => 'required|max:20|regex:^(\+98|0)?9\d{9}$|',
+            'phone' => 'required|max:20|regex:/^(09)[0-9]{9}/',
             'gender' => 'required|in:male,female',
         ];
     }
