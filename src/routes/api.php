@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PayController;
+use App\Http\Controllers\StudentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -27,3 +28,8 @@ Route::controller(PayController::class)->group(function () {
         });
     });
 });
+
+Route::resource('students', StudentController::class)
+    ->only([
+        'store',
+    ]);
