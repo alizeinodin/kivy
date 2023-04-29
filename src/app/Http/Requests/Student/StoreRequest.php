@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Student;
 
+use App\Rules\PhoneNumber;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreRequest extends FormRequest
@@ -26,7 +27,7 @@ class StoreRequest extends FormRequest
         return [
             'name' => 'required|string|max:100',
             'stn' => 'integer',
-            'phone' => 'required|max:20|regex:/^(09)[0-9]{9}/',
+            'phone' => ['required', 'max:20', new PhoneNumber()],
             'gender' => 'required|in:male,female',
         ];
     }
