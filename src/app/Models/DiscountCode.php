@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class DiscountCode extends Model
 {
@@ -17,5 +18,10 @@ class DiscountCode extends Model
     public function canBeUsed(): bool
     {
         return is_null($this->uses) || $this->uses > 0;
+    }
+
+    public function courses(): BelongsToMany
+    {
+        return $this->belongsToMany(Course::class);
     }
 }
