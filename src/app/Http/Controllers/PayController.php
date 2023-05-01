@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use App\Models\Pay;
 use App\Models\Student;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 use Shetabit\Multipay\Invoice;
 use Shetabit\Payment\Facade\Payment;
 use Symfony\Component\HttpFoundation\Response;
@@ -42,5 +45,21 @@ class PayController extends Controller
         ];
 
         return response($response, Response::HTTP_CREATED);
+    }
+
+    /**
+     * @param Request $request
+     * @param Course $course
+     *
+     * @return JsonResponse
+     */
+    public function buy(Request $request, Course $course): JsonResponse
+    {
+        $pay = new Pay();
+        $pay->amount = $course->amount;
+        $request->user()->pays()->save($pay);
+
+        return \response()
+            ->json($pay);
     }
 }
