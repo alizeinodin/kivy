@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DiscountCodeController;
 use App\Http\Controllers\PayController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Http\Request;
@@ -37,3 +38,11 @@ Route::resource('students', StudentController::class)
     ->only([
         'store',
     ]);
+
+Route::controller(DiscountCodeController::class)->group(function () {
+    Route::prefix('discountCode')->group(function () {
+        Route::name('discountCode')->group(function () {
+            Route::get('/add/{discountCode}/{pay}', 'addDiscount');
+        });
+    });
+});
