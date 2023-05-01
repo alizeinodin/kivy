@@ -6,10 +6,13 @@ use App\Models\Pay;
 use App\Models\Student;
 use Shetabit\Multipay\Invoice;
 use Shetabit\Payment\Facade\Payment;
+use Symfony\Component\HttpFoundation\Response;
 
 class PayController extends Controller
 {
     protected string $callbackRoute = '';
+
+    // TODO delete price and calculate it for a course
 
     public function pay(Student $student, int $price, string $detail = null)
     {
@@ -20,17 +23,24 @@ class PayController extends Controller
             'description' => $detail,
         ]);
 
-        return Payment::callbackUrl($this->callbackRoute)->purchase(
+        // add pay to db
+        $pay = new Pay();
+        $pay->amount = $price;
+
+        $payment = Payment::callbackUrl($this->callbackRoute)->purchase(
             $invoice,
-            function ($driver, $transactionId) use ($student, $price) {
-                // add pay to db
-                $pay = new Pay();
-                $pay->amount = $price;
+            function ($driver, $transactionId) use ($student, $price, $pay) {
                 $pay->trans_id = $transactionId;
 
                 $student->pays()->save($pay);
             }
         )->pay()->toJson;
 
+        $response = [
+            'details' => $pay,
+            'payment' => $payment,
+        ];
+
+        return response($response, Response::HTTP_CREATED);
     }
 }
