@@ -8,33 +8,25 @@ use App\Models\Student;
 use Illuminate\Http\JsonResponse;
 use Shetabit\Multipay\Invoice;
 use Shetabit\Payment\Facade\Payment;
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Response as ResponseHttp;
 
 class PayController extends Controller
 {
     protected string $callbackRoute = '';
 
-    // TODO delete price and calculate it for a course
-
-    public function pay(Student $student, int $price, string $detail = null)
+    public function pay(Student $student, Pay $pay, string $detail = null): JsonResponse
     {
         // invoice
         $invoice = new Invoice();
-        $invoice->amount($price);
+        $invoice->amount($pay->amount);
         $invoice->detail([
             'description' => $detail,
         ]);
 
-        // add pay to db
-        $pay = new Pay();
-        $pay->amount = $price;
-
         $payment = Payment::callbackUrl($this->callbackRoute)->purchase(
             $invoice,
-            function ($driver, $transactionId) use ($student, $price, $pay) {
+            function ($driver, $transactionId) use ($student, $pay) {
                 $pay->trans_id = $transactionId;
-
-                $student->pays()->save($pay);
             }
         )->pay()->toJson;
 
@@ -43,7 +35,7 @@ class PayController extends Controller
             'payment' => $payment,
         ];
 
-        return response($response, Response::HTTP_CREATED);
+        return response()->json($response, ResponseHttp::HTTP_CREATED);
     }
 
     /**
