@@ -30,6 +30,12 @@ Route::controller(PayController::class)->group(function () {
                     'student' => '[0-9]+',
                     'price' => '[0-9]+',
                 ]);
+            Route::get('/buy/{student}/{course}', 'buy')
+                ->name('buy')
+                ->where([
+                    'student' => '[0-9]+',
+                    'course' => '[0-9]+',
+                ]);;
         });
     });
 });
