@@ -23,7 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::controller(PayController::class)->group(function () {
     Route::prefix('/payment')->group(function () {
-        Route::name('payment')->group(function () {
+        Route::name('payment.')->group(function () {
             Route::get('/{student}/{price}/{detail?}', 'pay')
                 ->name('pay')
                 ->where([
@@ -40,9 +40,10 @@ Route::resource('students', StudentController::class)
     ]);
 
 Route::controller(DiscountCodeController::class)->group(function () {
-    Route::prefix('discountCode')->group(function () {
-        Route::name('discountCode')->group(function () {
-            Route::get('/add/{discountCode}/{pay}', 'addDiscount');
+    Route::prefix('/discountCode')->group(function () {
+        Route::name('discountCode.')->group(function () {
+            Route::get('/add/{discountCode}/{pay}', 'addDiscount')
+                ->name('add');
         });
     });
 });
