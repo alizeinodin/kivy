@@ -29,10 +29,12 @@ return new class extends Migration {
     public function down()
     {
         Schema::table('pays', function (Blueprint $table) {
+            $table->dropForeign(['student_id']);
+            $table->dropForeign(['course_id']);
+
             $table->dropColumn('student_id');
             $table->dropColumn('course_id');
 
-            $table->dropForeign(['student_id', 'course_id']);
         });
     }
 };
