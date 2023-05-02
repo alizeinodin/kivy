@@ -13,7 +13,7 @@ class CallbackRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,9 @@ class CallbackRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'id' => 'required|integer',
+            'amount' => 'required|integer',
+            'student_id' => 'required|integer',
         ];
     }
 }
