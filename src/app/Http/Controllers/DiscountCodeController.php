@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\DiscountCode\AddDiscountRequest;
 use App\Models\DiscountCode;
 use App\Models\Pay;
 use Illuminate\Http\JsonResponse;
@@ -9,9 +10,19 @@ use Symfony\Component\HttpFoundation\Response;
 
 class DiscountCodeController extends Controller
 {
-    // TODO checking for existence and date of discount code
-    public function addDiscount(Pay $pay, DiscountCode $discountCode): JsonResponse
+    /**
+     * @param AddDiscountRequest $request
+     * @param Pay $pay
+     *
+     * @return JsonResponse
+     */
+    public function addDiscount(AddDiscountRequest $request, Pay $pay): JsonResponse
     {
+        $validatedData = $request->validated();
+
+        $discountCode = DiscountCode::where(['code' => $validatedData['code']])
+            ->first();
+
         $pay->amount = ceil($pay->amount * $discountCode->amount);
 
         $response = [
