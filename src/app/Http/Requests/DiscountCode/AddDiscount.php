@@ -11,9 +11,9 @@ class AddDiscount extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
+    public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,7 @@ class AddDiscount extends FormRequest
     public function rules()
     {
         return [
-            //
+            'code' => 'required|exists:discount_codes,code',
         ];
     }
 }
