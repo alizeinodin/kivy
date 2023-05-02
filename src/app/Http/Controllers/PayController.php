@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Pay\CallbackRequest;
 use App\Models\Course;
 use App\Models\Pay;
 use App\Models\Student;
 use Illuminate\Http\JsonResponse;
 use Shetabit\Multipay\Invoice;
 use Shetabit\Payment\Facade\Payment;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Response as ResponseHttp;
 
 class PayController extends Controller
@@ -36,6 +38,34 @@ class PayController extends Controller
         ];
 
         return response()->json($response, ResponseHttp::HTTP_CREATED);
+    }
+
+    public function callback(CallbackRequest $request): JsonResponse
+    {
+        $validatedData = $request->validated();
+
+        // Verify the payment using NextPay gateway
+        $payment = Payment::callbackUrl(route('payment.callback'))
+            ->driver('nextpay')
+            ->transactionId($validatedData['id'])
+            ->amount($validatedData['amount'])
+            ->verify();
+
+        if ($payment->isVerified()) {
+            // TODO: implement set a course for an student
+            $pay = Pay::where(['trans_id' => $validatedData['id']])->first();
+            $pay->status = 'validated';
+            $pay->save();
+
+            $student = $pay->student();
+        }
+
+        $response = [
+            'message' => 'Payment verification failed'
+        ];
+
+        return response()
+            ->json($response, Response::HTTP_BAD_REQUEST);
     }
 
     /**
