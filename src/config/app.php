@@ -186,6 +186,7 @@ return [
          * Package Service Providers...
          */
         Shetabit\Payment\Provider\PaymentServiceProvider::class,
+        SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -211,6 +212,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         'Payment' => Shetabit\Payment\Facade\Payment::class,
+        'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
     ])->toArray(),
 
 ];
