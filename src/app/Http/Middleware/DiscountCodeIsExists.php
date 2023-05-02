@@ -21,8 +21,8 @@ class DiscountCodeIsExists
      */
     public function handle(Request $request, Closure $next)
     {
-        $id = $request->route()->parameter('discountCode');
-        $discountCode = DiscountCode::find($id);
+        $id = $request->input('code');
+        $discountCode = DiscountCode::where(['code' => $id])->first();
 
         if ($discountCode && $discountCode->canBeUsed() && !$discountCode->hasExpired()) {
             return $next($request);
