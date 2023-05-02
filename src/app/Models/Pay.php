@@ -15,6 +15,11 @@ class Pay extends Model
         return $this->belongsTo(Student::class);
     }
 
+    public function course(): BelongsTo
+    {
+        return $this->belongsTo(Course::class);
+    }
+
     public function discountCode(): BelongsTo
     {
         return $this->belongsTo(DiscountCode::class);
