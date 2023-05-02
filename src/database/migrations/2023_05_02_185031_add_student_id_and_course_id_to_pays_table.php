@@ -14,7 +14,7 @@ return new class extends Migration {
     {
         Schema::table('pays', function (Blueprint $table) {
             $table->unsignedBigInteger('student_id');
-            $table->unsignedBigInteger('course_id');
+            $table->unsignedBigInteger('course_id')->nullable();
 
             $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
             $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
@@ -34,7 +34,6 @@ return new class extends Migration {
 
             $table->dropColumn('student_id');
             $table->dropColumn('course_id');
-
         });
     }
 };
