@@ -48,7 +48,7 @@ Route::resource('students', StudentController::class)
 Route::controller(DiscountCodeController::class)->group(function () {
     Route::prefix('/discountCode')->group(function () {
         Route::name('discountCode.')->group(function () {
-            Route::get('/add/{discountCode}/{pay}', 'addDiscount')
+            Route::post('/add/{pay}', 'addDiscount')
                 ->name('add');
         });
     });
