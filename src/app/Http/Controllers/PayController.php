@@ -78,7 +78,11 @@ class PayController extends Controller
     {
         $pay = new Pay();
         $pay->amount = $course->amount;
-        $student->pays()->save($pay);
+
+        $pay->associate($student);
+        $pay->associate($course);
+
+        $pay->save();
 
         return \response()
             ->json($pay);
