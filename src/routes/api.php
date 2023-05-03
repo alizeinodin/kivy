@@ -24,11 +24,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::controller(PayController::class)->group(function () {
     Route::prefix('/payment')->group(function () {
         Route::name('payment.')->group(function () {
-            Route::get('/{student}/{price}/{detail?}', 'pay')
+            Route::get('/{student}/{pay}/{detail?}', 'pay')
                 ->name('pay')
                 ->where([
                     'student' => '[0-9]+',
-                    'price' => '[0-9]+',
+                    'pay' => '[0-9]+',
                 ]);
             Route::get('/buy/{student}/{course}', 'buy')
                 ->name('buy')
