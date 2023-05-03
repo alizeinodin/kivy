@@ -52,12 +52,18 @@ class PayController extends Controller
             ->verify();
 
         if ($payment->isVerified()) {
-            // TODO: implement set a course for an student
             $pay = Pay::where(['trans_id' => $validatedData['id']])->first();
             $pay->status = 'validated';
             $pay->save();
 
-            $student = $pay->student();
+            $response = [
+                'message' => 'Payment successful',
+                'course_name' => $pay->course->title,
+                'student_name' => $pay->student->name,
+            ];
+
+            return \response()
+                ->json($response, ResponseHttp::HTTP_OK);
         }
 
         $response = [
