@@ -45,7 +45,7 @@ class PayController extends Controller
         $validatedData = $request->validated();
 
         // Verify the payment using NextPay gateway
-        $payment = Payment::callbackUrl(route('payment.callback'))
+        $payment = Payment::callbackUrl(route($this->callbackRoute))
             ->driver('nextpay')
             ->transactionId($validatedData['id'])
             ->amount($validatedData['amount'])
