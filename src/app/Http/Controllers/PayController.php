@@ -14,7 +14,7 @@ use Symfony\Component\HttpFoundation\Response as ResponseHttp;
 
 class PayController extends Controller
 {
-    protected string $callbackRoute = '';
+    protected string $callbackRoute = 'api.payment.callback';
 
     public function pay(Student $student, Pay $pay, string $detail = null): JsonResponse
     {
