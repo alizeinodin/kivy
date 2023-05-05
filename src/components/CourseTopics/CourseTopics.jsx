@@ -10,12 +10,12 @@ import bullhornIcon from '../../imgs/tempimg/bullhorn.png'
 
 const CourseTopics = () => {
   return (
-    <div className="p-10 md:pt-16">
+    <div className="pt-14 p-10 md:pt-16 max-w-7xl m-auto">
       <div className="flex items-center justify-center mb-8 pt-10">
         <img src={introIcon} className="w-4 h-4 ml-4" />
-        <h2 className="text-2xl text-center">سر فصل دوره ها</h2>
+        <h2 className="text-lg font-semibold text-center">سر فصل دوره ها</h2>
       </div>
-      <div className='px-40 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center'>
+      <div className='px-16 md:px-36 lg:px-36 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center'>
         <Topics icon={timeIcon} backgroundColor="bg-violet-400" />
         <Topics icon={websIcon} backgroundColor="bg-cyan-300" />
         <Topics icon={toolsIcon} backgroundColor="bg-primaryColor" />
