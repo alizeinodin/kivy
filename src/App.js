@@ -5,7 +5,7 @@ import Slider from "./components/IntroducingInstructor/Slider/Slider";
 import TicketPage from "./components/TicketPage/TicketPage";
 import IntroducingInstructor from "./components/IntroducingInstructor/IntroducingInstructor";
 import Header from "./components/Header/Header";
-import Kiwi from "./components/kiwi/Kiwi";
+import IntroPage from "./components/IntroPage/IntroPage";
 function App() {
   return (
     // <Kiwi />
@@ -14,7 +14,7 @@ function App() {
     // <Slider/>
     <Router>
       <Routes>
-        <Route path="/" element={<Kiwi />} />
+        <Route path="/" element={<IntroPage />} />
         <Route path="/Register" element={<RegisterForm />} />
         <Route path="/Ticket" element={<TicketPage/>}/>
       </Routes>

@@ -1,0 +1,13 @@
+.KiwiContainer{
+    background-image: linear-Gradient(#EAEAEA,#EFDCCB);
+    width: 100vw;
+    height: 100%;
+    overflow-x: hidden;
+}
+.FooterSection{
+    background-color: #1b6563;
+    border-radius: 60px 60px 0 0;
+}
+.CourseFeaturesSection{
+    background-color: #1b6563;
+}
