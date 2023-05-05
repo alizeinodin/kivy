@@ -7,7 +7,8 @@ import IntroducingInstructor from "../IntroducingInstructor/IntroducingInstructo
 import CourseDetails from "../CourseDetails/CourseDetails";
 import Header from "../Header/Header";
 import "./IntroPage.css";
-import React, { useRef } from "react";
+import React, { useRef, createContext } from "react";
+export const ScrollContext = createContext();
 const IntroPage = () => {
   const CourseIntroductionRef = useRef(null);
   const CourseTopicsRef = useRef(null);
@@ -44,33 +45,42 @@ const IntroPage = () => {
 
   return (
     <div className="KiwiContainer">
-      <div>
-        <Header
-          ScrollCourseIntroductionRef={ScrollCourseIntroductionRef}
-          ScrollCourseTopicsRef={ScrollCourseTopicsRef}
-          ScrollIntroducingInstructorRef={ScrollIntroducingInstructorRef}
-          ScrollFooterRef={ScrollFooterRef}
-        />
-      </div>
-      <div>
-        <CourseDetails />
-      </div>
-      <div ref={IntroducingInstructorRef}>
-        <IntroducingInstructor />
-      </div>
-      <div ref={CourseIntroductionRef}>
-        <CourseIntroduction />
-      </div>
-      <div className="CourseFeaturesSection">
-        <CourseFeatures />
-      </div>
-      <EventPlace />
-      <div ref={CourseTopicsRef}>
-        <CourseTopics />
-      </div>
-      <div className="FooterSection" ref={FooterRef}>
-        <Footer />
-      </div>
+      <ScrollContext.Provider
+        value={{
+          ScrollCourseIntroductionRef,
+          ScrollCourseTopicsRef,
+          ScrollIntroducingInstructorRef,
+          ScrollFooterRef,
+        }}
+      >
+        <div>
+          <Header
+          // ScrollCourseIntroductionRef={ScrollCourseIntroductionRef}
+          // ScrollCourseTopicsRef={ScrollCourseTopicsRef}
+          // ScrollIntroducingInstructorRef={ScrollIntroducingInstructorRef}
+          // ScrollFooterRef={ScrollFooterRef}
+          />
+        </div>
+        <div>
+          <CourseDetails />
+        </div>
+        <div ref={IntroducingInstructorRef}>
+          <IntroducingInstructor />
+        </div>
+        <div ref={CourseIntroductionRef}>
+          <CourseIntroduction />
+        </div>
+        <div className="CourseFeaturesSection">
+          <CourseFeatures />
+        </div>
+        <EventPlace />
+        <div ref={CourseTopicsRef}>
+          <CourseTopics />
+        </div>
+        <div className="FooterSection" ref={FooterRef}>
+          <Footer />
+        </div>
+      </ScrollContext.Provider>
     </div>
   );
 };

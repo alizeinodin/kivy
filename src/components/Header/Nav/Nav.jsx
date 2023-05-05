@@ -1,11 +1,14 @@
-import React, { useRef, useState, useEffect, useLayoutEffect } from "react";
+import React, {
+  useRef,
+  useState,
+  useEffect,
+  useLayoutEffect,
+  useContext,
+} from "react";
 import "./Nav.css";
-const Nav = ({
-  ScrollCourseIntroductionRef,
-  ScrollCourseTopicsRef,
-  ScrollIntroducingInstructorRef,
-  ScrollFooterRef,
-}) => {
+import { ScrollContext } from "./../../../components/IntroPage/IntroPage";
+const Nav = () => {
+  const Context = useContext(ScrollContext);
   const navContainer = useRef(null);
   const linkRef = useRef(null);
 
@@ -38,7 +41,7 @@ const Nav = ({
         <li
           className="NavLink"
           onClick={() => {
-            ScrollCourseIntroductionRef();
+            Context.ScrollCourseIntroductionRef();
           }}
         >
           معرفی دوره
@@ -46,7 +49,7 @@ const Nav = ({
         <li
           className="NavLink"
           onClick={() => {
-            ScrollCourseTopicsRef();
+            Context.ScrollCourseTopicsRef();
           }}
         >
           سرفصل‌های دوره
@@ -54,7 +57,7 @@ const Nav = ({
         <li
           className="NavLink"
           onClick={() => {
-            ScrollIntroducingInstructorRef();
+            Context.ScrollIntroducingInstructorRef();
           }}
         >
           مدرس دوره
@@ -62,12 +65,14 @@ const Nav = ({
         <li
           className="NavLink"
           onClick={() => {
-            ScrollFooterRef();
+            Context.ScrollFooterRef();
           }}
         >
           راه‌های ارتباطی
         </li>
-        <li className="NavLink"><a href="http://ssces.barfenow.ir/">ثبت نام</a> </li>
+        <li className="NavLink">
+          <a href="http://ssces.barfenow.ir/">ثبت نام</a>{" "}
+        </li>
       </ul>
     </nav>
   );

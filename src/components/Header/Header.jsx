@@ -2,19 +2,14 @@ import Nav from "./Nav/Nav";
 // import { Link } from "react-router-dom";
 import React from "react";
 import "./Header.css";
-const Header = ({
-  ScrollCourseIntroductionRef,
-  ScrollCourseTopicsRef,
-  ScrollIntroducingInstructorRef,
-  ScrollFooterRef,
-}) => {
+const Header = () => {
   return (
     <div className="Header">
       <Nav
-        ScrollCourseIntroductionRef={ScrollCourseIntroductionRef}
-        ScrollCourseTopicsRef={ScrollCourseTopicsRef}
-        ScrollIntroducingInstructorRef={ScrollIntroducingInstructorRef}
-        ScrollFooterRef={ScrollFooterRef}
+        // ScrollCourseIntroductionRef={ScrollCourseIntroductionRef}
+        // ScrollCourseTopicsRef={ScrollCourseTopicsRef}
+        // ScrollIntroducingInstructorRef={ScrollIntroducingInstructorRef}
+        // ScrollFooterRef={ScrollFooterRef}
       />
       <div className="Header-content">
         <h1 className="Header-title">دوره آموزش جامع فتوشاپ از صفر تا صد</h1>
