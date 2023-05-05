@@ -67,7 +67,7 @@ const Nav = ({
         >
           راه‌های ارتباطی
         </li>
-        <li className="NavLink">ثبت نام</li>
+        <li className="NavLink"><a href="http://ssces.barfenow.ir/">ثبت نام</a> </li>
       </ul>
     </nav>
   );

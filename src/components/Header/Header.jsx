@@ -23,7 +23,7 @@ const Header = ({
           بوعلی سینا
         </p>
         {/* <Link>ثبت نام در دوره</Link> */}
-        <button className="Header-btn">ثبت نام در دوره</button>
+        <a className="Header-btn" href="http://ssces.barfenow.ir/">ثبت نام در دوره</a>
       </div>
     </div>
   );

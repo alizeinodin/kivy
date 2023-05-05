@@ -8,16 +8,17 @@ import Header from "./components/Header/Header";
 import Kiwi from "./components/kiwi/Kiwi";
 function App() {
   return (
-    <Kiwi />
+    // <Kiwi />
+    // <TicketPage />
     //  <Header/>
     // <Slider/>
-    // <Router>
-    //   <Routes>
-    //     <Route path="/" element={<RegisterForm />} />
-    //     <Route path="/Register" element={<RegisterForm />} />
-    //     <Route path="/Ticket" element={<TicketPage/>}/>
-    //   </Routes>
-    // </Router>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Kiwi />} />
+        <Route path="/Register" element={<RegisterForm />} />
+        <Route path="/Ticket" element={<TicketPage/>}/>
+      </Routes>
+    </Router>
     // <div className='w-full h-screen bg-[#616473] flex items-center'>
     //   <RegisterForm />
     // </div>
