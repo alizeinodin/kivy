@@ -83,10 +83,10 @@ class PayController extends Controller
     public function buy(Student $student, Course $course): JsonResponse
     {
         $pay = new Pay();
-        $pay->amount = $course->amount;
+        $pay->amount = $course->price;
 
-        $pay->associate($student);
-        $pay->associate($course);
+        $pay->student()->associate($student);
+        $pay->course()->associate($course);
 
         $pay->save();
 
