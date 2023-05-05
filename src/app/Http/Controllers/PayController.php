@@ -16,7 +16,15 @@ class PayController extends Controller
 {
     protected string $callbackRoute = 'api.payment.callback';
 
-    public function pay(Student $student, Pay $pay, string $detail = null): JsonResponse
+    /**
+     * @param Student $student
+     * @param Pay $pay
+     * @param string|null $detail
+     *
+     * @return mixed
+     * @throws \Exception
+     */
+    public function pay(Student $student, Pay $pay, string $detail = null): mixed
     {
         // invoice
         $invoice = new Invoice();
@@ -25,19 +33,12 @@ class PayController extends Controller
             'description' => $detail,
         ]);
 
-        $payment = Payment::callbackUrl($this->callbackRoute)->purchase(
+        return Payment::purchase(
             $invoice,
             function ($driver, $transactionId) use ($student, $pay) {
                 $pay->trans_id = $transactionId;
             }
-        )->pay()->toJson;
-
-        $response = [
-            'details' => $pay,
-            'payment' => $payment,
-        ];
-
-        return response()->json($response, ResponseHttp::HTTP_CREATED);
+        )->pay()->toJson();
     }
 
     public function callback(CallbackRequest $request): JsonResponse
