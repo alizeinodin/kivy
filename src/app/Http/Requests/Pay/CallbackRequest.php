@@ -24,9 +24,8 @@ class CallbackRequest extends FormRequest
     public function rules()
     {
         return [
-            'id' => 'required|integer',
+            'id' => 'required|string',
             'amount' => 'required|integer',
-            'student_id' => 'required|integer',
         ];
     }
 }
