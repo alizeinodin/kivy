@@ -5,7 +5,7 @@ import emailIcon from "../../imgs/tempimg/email.png";
 
 const Footer = () => {
   return (
-    <div className="bg-secondaryColor text-white px-10 py-4" style={{'borderRadius':'6rem 6rem 0 0'}}>
+    <div className="bg-secondaryColor text-white px-10 py-4" style={{'borderRadius':'6rem 6rem 0 0', 'overflowX': 'hidden'}}>
       <div className="grid gride-cols-1 md:grid-cols-2">
         <div className="pt-8 md:pt-10 md:pr-20">
           <p className="mb-10 text-lg">تیم کیوی</p>

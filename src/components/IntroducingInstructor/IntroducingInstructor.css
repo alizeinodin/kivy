@@ -6,6 +6,7 @@
   width: 100vw;
   height: 400px;
   box-sizing: border-box;
+  overflow: hidden;
 }
 .IntroducingInstructor-header {
   display: flex;

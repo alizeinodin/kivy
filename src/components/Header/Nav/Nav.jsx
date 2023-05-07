@@ -17,6 +17,10 @@ const Nav = () => {
     <nav
       className={`NavContainer ${showMenu ? "NavContainerActive" : null}`}
       ref={navContainer}
+      onClick={() => {
+        linkRef.current.style.display = showMenu ? "none" : "flex";
+        setShowMenu(!showMenu);
+      }}
     >
       <div
         className="NavBtn"
