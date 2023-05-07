@@ -1,12 +1,11 @@
 import React, {
   useRef,
   useState,
-  useEffect,
-  useLayoutEffect,
   useContext,
 } from "react";
 import "./Nav.css";
 import { ScrollContext } from "./../../../components/IntroPage/IntroPage";
+import { Link } from "react-router-dom";
 const Nav = () => {
   const Context = useContext(ScrollContext);
   const navContainer = useRef(null);
@@ -34,14 +33,7 @@ const Nav = () => {
         ></span>
       </div>
       <ul className="NavLinks" ref={linkRef}>
-        <li
-          className="NavLink"
-          // onClick={() => {
-          //   console.log("here");
-          // }}
-        >
-          کیوی
-        </li>
+        <li className="NavLink">کیوی</li>
         <li
           className="NavLink"
           onClick={() => {
@@ -75,7 +67,7 @@ const Nav = () => {
           راه‌های ارتباطی
         </li>
         <li className="NavLink">
-          <a href="http://ssces.barfenow.ir/">ثبت نام</a>{" "}
+          <Link to={"/Register"}>ثبت نام</Link>
         </li>
       </ul>
     </nav>

@@ -1,10 +1,8 @@
 import check from "./../../imgs/check-mark.png";
 import "./RegisterSuccessfully.css";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import sound from "./../../sounds/Bulletin.mp3";
 const RegisterSuccessfully = () => {
-  const [s, sets] = useState(0);
-  const soundSunccess = new Audio(sound);
     return (
     <div className="RegisterSuccessfully-container">
               <audio  src={sound}  autoPlay/>
