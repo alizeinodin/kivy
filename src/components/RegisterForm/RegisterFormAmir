@@ -1,0 +1,113 @@
+import profilePath from "../imgs/profile.jpg";
+import logoPath from "../imgs/logo.png";
+
+function RegisterForm() {
+  return (
+    <div className='flex h-5/6 w-5/6 sm:w-4/5 md:w-3/5 min-[1080px]:max-w-7xl min-[1080px]:w-auto min-[1080px]:h-auto bg-white'>
+      <div className='w-full min-[1080px]:w-1/2 flex flex-col gap-20 justify-around items-center'>
+        <div className='flex flex-col justify-center items-center'>
+          <div className='hidden max-[1080px]:block w-48'>
+            <img src={logoPath} alt='Logo' />
+          </div>
+          <p className='text-xl text-[#180A3F]'>ثبت نام در دوره</p>
+        </div>
+
+        <form className='flex flex-col gap-6 w-3/5'>
+          <input
+            type='text'
+            placeholder='نام و نام خانوادگی'
+            className='bg-[#D2D2D2] px-4 py-3 rounded-xl border-2 border-[#C9C9C9] outline-[#C9C9C9]'
+          />
+          <input
+            type='text'
+            placeholder='شماره دانشجویی'
+            className='bg-[#D2D2D2] px-4 py-3 rounded-xl border-2 border-[#C9C9C9] outline-[#C9C9C9]'
+          />
+          <input
+            type='text'
+            placeholder='شماره تلفن'
+            className='bg-[#D2D2D2] px-4 py-3 rounded-xl border-2 border-[#C9C9C9] outline-[#C9C9C9]'
+          />
+
+          <div className='bg-[#D2D2D2] px-4 py-1 rounded-xl border-2 border-[#C9C9C9] flex items-center justify-between'>
+            <label className=''>جنسیت</label>
+            <div class='flex items-center gap-5'>
+              <div class='inline-flex items-center'>
+                <label
+                  class='relative flex cursor-pointer items-center rounded-full p-3'
+                  for='html'
+                  data-ripple-dark='true'
+                >
+                  <input
+                    id='html'
+                    name='type'
+                    type='radio'
+                    class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-[#180A3F] transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-[#180A3F] checked:before:bg-[#180A3F] hover:before:opacity-10"
+                  />
+                  <div class='pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-[#180A3F] opacity-0 transition-opacity peer-checked:opacity-100'>
+                    <svg
+                      xmlns='http://www.w3.org/2000/svg'
+                      class='h-3.5 w-3.5'
+                      viewBox='0 0 16 16'
+                      fill='currentColor'
+                    >
+                      <circle data-name='ellipse' cx='8' cy='8' r='8'></circle>
+                    </svg>
+                  </div>
+                </label>
+                <label
+                  class='mt-px cursor-pointer select-none font-base text-black text-base'
+                  for='html'
+                >
+                  مرد
+                </label>
+              </div>
+              <div class='inline-flex items-center'>
+                <label
+                  class='relative flex cursor-pointer items-center rounded-full p-3'
+                  for='react'
+                  data-ripple-dark='true'
+                >
+                  <input
+                    id='react'
+                    name='type'
+                    type='radio'
+                    class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-[#180A3F] transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-[#180A3F] checked:before:bg-[#180A3F] hover:before:opacity-10"
+                  />
+                  <div class='pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-[#180A3F] opacity-0 transition-opacity peer-checked:opacity-100'>
+                    <svg
+                      xmlns='http://www.w3.org/2000/svg'
+                      class='h-3.5 w-3.5'
+                      viewBox='0 0 16 16'
+                      fill='currentColor'
+                    >
+                      <circle data-name='ellipse' cx='8' cy='8' r='8'></circle>
+                    </svg>
+                  </div>
+                </label>
+                <label
+                  class='mt-px cursor-pointer select-none font-base text-black text-base'
+                  for='react'
+                >
+                  زن
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <button className='bg-[#180A3F] text-white transition-all p-4 rounded-xl w-full text-base'>
+              ثبت نام
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div className='hidden min-[1080px]:block w-1/2'>
+        <img src={profilePath} alt='profile logo' className='w-fit' />
+      </div>
+    </div>
+  );
+}
+
+export default RegisterForm;
