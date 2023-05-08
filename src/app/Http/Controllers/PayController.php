@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\Pay\CallbackRequest;
 use App\Models\Course;
 use App\Models\Pay;
 use App\Models\Student;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 use Shetabit\Multipay\Invoice;
 use Shetabit\Payment\Facade\Payment;
 use Symfony\Component\HttpFoundation\Response;
@@ -41,18 +41,23 @@ class PayController extends Controller
         )->pay()->toJson();
     }
 
-    public function callback(CallbackRequest $request): JsonResponse
+    public function callback(Request $request): JsonResponse
     {
-        $validatedData = $request->validated();
+        $pay = Pay::where([
+            'trans_id' => $request->input('trans_id'),
+            'amount' => $request->input('amount'),
+        ])
+            ->latest()
+            ->first();
 
         // Verify the payment using NextPay gateway
-        $payment = Payment::transactionId($validatedData['id'])
-            ->amount($validatedData['amount'])
+        $payment = Payment::transactionId($pay['trans_id'])
+            ->amount($pay['amount'])
             ->verify();
 
         if ($payment->isVerified()) {
-            $pay = Pay::where(['trans_id' => $validatedData['id']])->first();
             $pay->status = 'validated';
+            $pay->Shaparak_Ref_Id = $payment->getRefrenceId();
             $pay->save();
 
             $response = [
