@@ -119,7 +119,7 @@ return [
             'apiPaymentUrl' => 'https://nextpay.org/nx/gateway/payment/',
             'apiVerificationUrl' => 'https://nextpay.org/nx/gateway/verify',
             'merchantId' => '65d94dfb-19d8-4357-bcf4-cf570abcf251',
-            'callbackUrl' => route('api.payment.callback'),
+            'callbackUrl' => 'https://kiwi.ssceb.ir/api/payment/callback',
             'description' => 'payment using nextpay',
         ],
         'parsian' => [
