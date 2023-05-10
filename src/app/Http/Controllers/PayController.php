@@ -7,6 +7,7 @@ use App\Models\Pay;
 use App\Models\Student;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Shetabit\Multipay\Exceptions\InvalidPaymentException;
 use Shetabit\Multipay\Invoice;
 use Shetabit\Payment\Facade\Payment;
 use Symfony\Component\HttpFoundation\Response;
@@ -50,14 +51,14 @@ class PayController extends Controller
             ->latest()
             ->first();
 
-        // Verify the payment using NextPay gateway
-        $payment = Payment::transactionId($pay['trans_id'])
-            ->amount($pay['amount'])
-            ->verify();
+        try {
+            // Verify the payment using NextPay gateway
+            $payment = Payment::transactionId($pay['trans_id'])
+                ->amount($pay['amount'])
+                ->verify();
 
-        if ($payment->isVerified()) {
             $pay->status = 'validated';
-            $pay->Shaparak_Ref_Id = $payment->getRefrenceId();
+            $pay->Shaparak_Ref_Id = $payment->getReferenceId();
             $pay->save();
 
             $response = [
@@ -68,14 +69,16 @@ class PayController extends Controller
 
             return \response()
                 ->json($response, ResponseHttp::HTTP_OK);
+
+
+        } catch (InvalidPaymentException $exception) {
+
+            $response = ['message' => 'Payment verification failed'];
+
+            return response()
+                ->json($response, Response::HTTP_BAD_REQUEST);
         }
 
-        $response = [
-            'message' => 'Payment verification failed'
-        ];
-
-        return response()
-            ->json($response, Response::HTTP_BAD_REQUEST);
     }
 
     /**
@@ -84,7 +87,8 @@ class PayController extends Controller
      *
      * @return JsonResponse
      */
-    public function buy(Student $student, Course $course): JsonResponse
+    public
+    function buy(Student $student, Course $course): JsonResponse
     {
         $pay = new Pay();
         $pay->amount = $course->price;
