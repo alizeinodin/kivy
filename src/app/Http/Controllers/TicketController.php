@@ -14,7 +14,6 @@ class TicketController extends Controller
 
     public function get(Student $student, Course $course): JsonResponse
     {
-
         $path = public_path('images/qrcode/' . mt_rand() . '.png');
 
         $qrcode = Qrcode::format('png')
