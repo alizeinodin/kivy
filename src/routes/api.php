@@ -3,6 +3,7 @@
 use App\Http\Controllers\DiscountCodeController;
 use App\Http\Controllers\PayController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TicketController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -53,6 +54,17 @@ Route::controller(DiscountCodeController::class)->group(function () {
         Route::name('discountCode.')->group(function () {
             Route::post('/add/{pay}', 'addDiscount')
                 ->name('add');
+        });
+    });
+});
+
+Route::controller(TicketController::class)->group(function () {
+    Route::prefix('/ticket')->group(function () {
+        Route::name('ticket.')->group(function () {
+            Route::get('/{student}/{course}')
+                ->name('get');
+            Route::get('/{student}/{course}/verify')
+                ->name('name');
         });
     });
 });
