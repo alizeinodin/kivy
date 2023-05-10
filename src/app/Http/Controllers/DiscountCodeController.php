@@ -19,17 +19,28 @@ class DiscountCodeController extends Controller
     public function addDiscount(AddDiscountRequest $request, Pay $pay): JsonResponse
     {
         $validatedData = $request->validated();
+        $courseId = $pay->course->id;
 
-        $discountCode = DiscountCode::where(['code' => $validatedData['code']])
+        $discountCode = DiscountCode::whereHas('courses', function ($query) use ($courseId) {
+            $query->where('id', $courseId);
+        })
+            ->where(['code' => $validatedData['code']])
             ->first();
+        if ($discountCode and $discountCode->canBeUsed() and !$discountCode->hasExpired()) {
+            $pay->amount = ceil($pay->amount * ($discountCode->amount / 100));
 
-        $pay->amount = ceil($pay->amount * $discountCode->amount);
+            $response = [
+                'message' => 'The discount code add to your pay',
+                'pay' => $pay,
+            ];
+
+            return response()->json($response, Response::HTTP_OK);
+        }
 
         $response = [
-            'message' => 'The discount code add to your pay',
-            'pay' => $pay,
+            'message' => 'Your discount code expired',
         ];
 
-        return response()->json($response, Response::HTTP_OK);
+        return response()->json($response, Response::HTTP_FORBIDDEN);
     }
 }
