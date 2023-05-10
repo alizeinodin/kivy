@@ -119,8 +119,7 @@ return [
             'apiPaymentUrl' => 'https://nextpay.org/nx/gateway/payment/',
             'apiVerificationUrl' => 'https://nextpay.org/nx/gateway/verify',
             'merchantId' => '65d94dfb-19d8-4357-bcf4-cf570abcf251',
-            // TODO : Set Callback URL
-            'callbackUrl' => 'https://yoursite.com/path/to',
+            'callbackUrl' => route('api.payment.callback'),
             'description' => 'payment using nextpay',
         ],
         'parsian' => [
