@@ -18,7 +18,10 @@ class TicketController extends Controller
         $path = public_path('images/qrcode/' . mt_rand() . '.png');
 
         $qrcode = Qrcode::format('png')
-            ->generate('test', $path);
+            ->generate(route($this->verifyRoute, [
+                'student' => $student->id,
+                'course' => $course->id,
+            ]), $path);
 
         $response = [
             'student_name' => $student->name,
