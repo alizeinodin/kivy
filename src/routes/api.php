@@ -64,7 +64,7 @@ Route::controller(TicketController::class)->group(function () {
             Route::get('/{student}/{course}')
                 ->name('get');
             Route::get('/{student}/{course}/verify')
-                ->name('name');
+                ->name('verify');
         });
     });
 });
