@@ -62,9 +62,15 @@ Route::controller(TicketController::class)->group(function () {
     Route::prefix('/ticket')->group(function () {
         Route::name('ticket.')->group(function () {
             Route::get('/{student}/{course}')
-                ->name('get');
+                ->name('get')
+                ->middleware([
+                    'student.registered',
+                ]);
             Route::get('/{student}/{course}/verify')
-                ->name('verify');
+                ->name('verify')
+                ->middleware([
+                    'student.registered',
+                ]);
         });
     });
 });
