@@ -57,7 +57,7 @@ class PayController extends Controller
                 ->amount($pay['amount'])
                 ->verify();
 
-            $pay->status = 'validated';
+            $pay->status = 'accepted';
             $pay->Shaparak_Ref_Id = $payment->getReferenceId();
             $pay->save();
 
