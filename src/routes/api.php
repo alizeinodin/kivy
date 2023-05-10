@@ -37,7 +37,7 @@ Route::controller(PayController::class)->group(function () {
                     'course' => '[0-9]+',
                 ]);
 
-            Route::post('/callback', 'callback')
+            Route::get('/callback', 'callback')
                 ->name('callback');
         });
     });
