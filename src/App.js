@@ -1,4 +1,4 @@
-import RegisterForm from "./components/RegisterForm/RegisterForm";
+import RegisterFormAmir from "./components/RegisterForm/RegisterFormAmir";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import TicketPage from "./components/TicketPage/TicketPage";
 import IntroPage from "./components/IntroPage/IntroPage";
@@ -8,14 +8,14 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<IntroPage />} />
-        <Route path="/Register" element={<RegisterForm />} />
-        <Route path="/Ticket" element={<TicketPage />} />
+        <Route path='/' element={<IntroPage />} />
+        <Route path='/Register/:id' element={<RegisterFormAmir />} />
+        <Route path='/Ticket' element={<TicketPage />} />
         <Route
-          path="/RegisterSuccessfully"
+          path='/RegisterSuccessfully'
           element={<RegisterSuccessfully />}
         />
-        <Route path="/RegistrationError" element={<RegistrationError />} />
+        <Route path='/RegistrationError' element={<RegistrationError />} />
       </Routes>
     </Router>
     // <div className='w-full h-screen bg-[#616473] flex items-center'>
