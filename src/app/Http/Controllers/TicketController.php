@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class TicketController extends Controller
 {
-    private string $verifyRoute = 'api.ticket.verify';
+    private string $verifyRoute = 'ticket.verify';
 
     public function get(Student $student, Course $course): JsonResponse
     {
