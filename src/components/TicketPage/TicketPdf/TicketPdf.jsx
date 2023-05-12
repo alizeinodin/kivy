@@ -9,16 +9,12 @@ import {
 } from "@react-pdf/renderer";
 import TicketPdfDetail from "./TicketPdfDetail/TicketPdfDetail";
 import React, { useState, useContext ,useEffect} from "react";
-import { TicketContext } from "../TicketPage";
 import logo from "./../../../imgs/tempimg/back-in-time.png";
-import QR from "./../../../imgs/tempimg/qr-code.png";
 import vazirRegular from "./../../../fonts/fonts/ttf/Vazirmatn-Regular.ttf";
 import vazirLight from "./../../../fonts/fonts/ttf/Vazirmatn-Light.ttf";
 import sgReg from "./../../../fonts/SGKara-Regular_p30download.com.ttf";
 const TicketPdf = ({course_name,student_name,qrcode}) => {
-  console.log(course_name,student_name,qrcode)
-  const p=useContext(TicketContext)
-  console.log(p)
+
   const [detail, setDetail] = useState([
     {
       id: 2,
