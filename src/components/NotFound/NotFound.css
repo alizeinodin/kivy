@@ -1,0 +1,24 @@
+.NotFound-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 60px;
+}
+.NotFound-text {
+  font-size: 25px;
+  color: #ff725e;
+  font-family: "Vazirmatn Regular";
+  text-align: center;
+}
+.NotFound-image {
+  width: 350px;
+  height: 350px;
+}
+@media screen and (max-width=480px){
+    .NotFound-text{
+        width: 300px;
+    } 
+}
