@@ -1,8 +1,11 @@
 import axios from "axios";
 
-function BaseUrl() {
-  const baseUrl = `https://kiwi.ssceb.ir/api`;
-  return baseUrl;
-}
+const BaseUrl=axios.create({
+  baseURL:'https://kiwi.ssceb.ir/api'
+})
+// function BaseUrl() {
+//   const baseUrl = ``;
+//   return baseUrl;
+// }
 
 export default BaseUrl;

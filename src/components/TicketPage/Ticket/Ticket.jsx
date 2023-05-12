@@ -1,16 +1,13 @@
 import TicketDetail from "./TicketDetail/TicketDetail";
-import React, { useState } from "react";
+import React, { useState, useEffect,useContext } from "react";
 import "./Ticket.css";
 import logo from "./../../../imgs/tempimg/back-in-time.png";
-import QR from "./../../../imgs/tempimg/qr-code.png";
 import { RxCopy, RxCheck } from "react-icons/rx";
+import { TicketContext } from "../TicketPage";
 const Ticket = () => {
+  const data=useContext(TicketContext)
+
   const [detail, setDetail] = useState([
-    {
-      id: 1,
-      title: "نام و نام خانوادگی",
-      content: "دانشجوی بوعلی",
-    },
     {
       id: 2,
       title: "تاریخ برگزاری",
@@ -31,11 +28,16 @@ const Ticket = () => {
         <img className="ticket-header-img" src={logo} />
         <div className="ticket-header-content">
           <span className="ticket-header-title">بلیط حضور در</span>
-          <h1 className="ticket-header-heading">دوره آموزش فتوشاپ</h1>
+          <h1 className="ticket-header-heading">{data.course_name}</h1>
         </div>
       </div>
       {/* --------------------------------------------------- */}
       <div className="ticket-detail">
+        <TicketDetail
+          id={1}
+          title={"نام و نام خانوادگی"}
+          content={data.student_name}
+        />
         {detail.map((item) => (
           <TicketDetail
             key={item.id}
@@ -53,7 +55,11 @@ const Ticket = () => {
       {/* --------------------------------------------------- */}
 
       <div className="ticket-barcode">
-        <img src={QR} alt="" className="ticket-barcode-img" />
+        <img
+          src={`https://kiwi.ssceb.ir/${data.qrcode}`}
+          alt="QR"
+          className="ticket-barcode-img"
+        />
         <div className="ticket-barcode-code">
           <span className="ticket-barcode-code-title">کد رهگیری ثبت نام</span>
           <div

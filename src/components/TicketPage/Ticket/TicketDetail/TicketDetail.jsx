@@ -1,7 +1,7 @@
 import './TicketDetail.css'
 const TicketDetail = ({
   title = "نام و نام خانوادگی",
-  content = "دانشجوی بوعلی",
+  content = "---",
 }) => {
   return (
     <div className="TicketDetail">

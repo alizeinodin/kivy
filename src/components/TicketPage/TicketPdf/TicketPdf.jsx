@@ -8,20 +8,18 @@ import {
   Font,
 } from "@react-pdf/renderer";
 import TicketPdfDetail from "./TicketPdfDetail/TicketPdfDetail";
-import React, { useState } from "react";
+import React, { useState, useContext ,useEffect} from "react";
+import { TicketContext } from "../TicketPage";
 import logo from "./../../../imgs/tempimg/back-in-time.png";
 import QR from "./../../../imgs/tempimg/qr-code.png";
 import vazirRegular from "./../../../fonts/fonts/ttf/Vazirmatn-Regular.ttf";
 import vazirLight from "./../../../fonts/fonts/ttf/Vazirmatn-Light.ttf";
 import sgReg from "./../../../fonts/SGKara-Regular_p30download.com.ttf";
-
-const TicketPdf = () => {
+const TicketPdf = ({course_name,student_name,qrcode}) => {
+  console.log(course_name,student_name,qrcode)
+  const p=useContext(TicketContext)
+  console.log(p)
   const [detail, setDetail] = useState([
-    {
-      id: 1,
-      title: "نام و نام خانوادگی",
-      content: "دانشجوی بوعلی",
-    },
     {
       id: 2,
       title: "تاریخ برگزاری",
@@ -180,11 +178,16 @@ const TicketPdf = () => {
             <Image source={logo} style={style.ticketHeaderImg} />
             <View style={style.ticketHeaderContent}>
               <Text style={style.ticketHeaderTitle}>بلیط حضور در</Text>
-              <Text style={style.ticketHeaderHeading}>دوره آموزش فتوشاپ</Text>
+              <Text style={style.ticketHeaderHeading}>{course_name}</Text>
             </View>
           </View>
           {/* --------------------------------------------------- */}
           <View style={style.ticketDetail}>
+            <TicketPdfDetail
+              id={1}
+              title={"نام و نام خانوادگی"}
+              content={student_name}
+            />
             {detail.map((item) => (
               <TicketPdfDetail key={item.id} {...item} />
             ))}
@@ -198,7 +201,10 @@ const TicketPdf = () => {
           {/* --------------------------------------------------- */}
 
           <View style={style.ticketBarcode}>
-            <Image source={QR} style={style.ticketBarcodeImg} />
+            <Image
+              source={`https://kiwi.ssceb.ir/${qrcode}`}
+              style={style.ticketBarcodeImg}
+            />
             <View style={style.tickeBarcodeCode}>
               <Text style={style.ticketBarcodeCodeTitle}>
                 کد رهگیری ثبت نام

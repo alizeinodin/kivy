@@ -8,19 +8,16 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<IntroPage />} />
-        <Route path='/Register/:id' element={<RegisterFormAmir />} />
-        <Route path='/Ticket' element={<TicketPage />} />
+        <Route path="/" element={<IntroPage />} />
+        <Route path="/Register/:id" element={<RegisterFormAmir />} />
+        <Route path="/Ticket/:id/:id" element={<TicketPage />} />
         <Route
-          path='/RegisterSuccessfully'
+          path="/RegisterSuccessfully"
           element={<RegisterSuccessfully />}
         />
-        <Route path='/RegistrationError' element={<RegistrationError />} />
+        <Route path="/RegistrationError" element={<RegistrationError />} />
       </Routes>
     </Router>
-    // <div className='w-full h-screen bg-[#616473] flex items-center'>
-    //   <RegisterForm />
-    // </div>
   );
 }
 
