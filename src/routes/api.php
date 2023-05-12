@@ -61,12 +61,12 @@ Route::controller(DiscountCodeController::class)->group(function () {
 Route::controller(TicketController::class)->group(function () {
     Route::prefix('/ticket')->group(function () {
         Route::name('ticket.')->group(function () {
-            Route::get('/{student}/{course}')
+            Route::get('/{student}/{course}', 'get')
                 ->name('get')
                 ->middleware([
                     'student.registered',
                 ]);
-            Route::get('/{student}/{course}/verify')
+            Route::get('/{student}/{course}/verify', 'verify')
                 ->name('verify')
                 ->middleware([
                     'student.registered',
