@@ -38,7 +38,10 @@ class TicketController extends Controller
         $courseId = $course->id;
 
         $student = Student::whereHas('courses', function ($query) use ($courseId) {
-            $query->where('courses.id', $courseId);
+            $query->where([
+                'courses.id' => $courseId,
+                'pays.status' => 'accepted'
+            ]);
         })
             ->where(['id' => $student->id])
             ->first();
