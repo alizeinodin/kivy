@@ -55,11 +55,11 @@ const Ticket = () => {
       {/* --------------------------------------------------- */}
 
       <div className="ticket-barcode">
-        {/* <img
+        <img
           src={`https://kiwi.ssceb.ir/${data.qrcode}`}
           alt="QR"
           className="ticket-barcode-img"
-        /> */}
+        />
         <div className="ticket-barcode-code">
           <span className="ticket-barcode-code-title">کد رهگیری ثبت نام</span>
           <div

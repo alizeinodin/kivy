@@ -9,7 +9,9 @@ import axios from "axios";
 export const TicketContext = createContext();
 const TicketPage = () => {
   const [data, setData] = useState({});
+
   const path = useLocation().pathname.split("/");
+  const [image, setImage] = useState("");
   const idCourse = path[path.length - 2];
   const idStudent = path[path.length - 1];
   useEffect(() => {
@@ -19,14 +21,35 @@ const TicketPage = () => {
       },
     })
       .then((res) => {
-        console.log(res.data);
-
         setData(res.data);
       })
       .catch((err) => console.log(err));
-    
+
+    async function fetchImage() {
+      try {
+        const response = await BaseUrl.get(
+          `ticket/${idCourse}/${idStudent}/qrCode`,
+          { responseType: "blob" }
+        );
+        const imageUrl = URL.createObjectURL(response.data);
+        setImage(imageUrl);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    fetchImage();
+
+    return () => URL.revokeObjectURL(image);
   }, []);
-  useEffect(() => {}, [data]);
+
+  // useEffect(() => {
+
+  // }, []);
+
+  useEffect(() => {
+    console.log(image);
+  }, [data]);
   if (data.qrcode) {
     return (
       <TicketContext.Provider value={data}>
@@ -39,7 +62,7 @@ const TicketPage = () => {
                 <TicketPdf
                   course_name={data.course_name}
                   student_name={data.student_name}
-                  qrcode={data.qrcode}
+                  qrcode={image}
                 />
               }
               fileName="ticket.pdf"

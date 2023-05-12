@@ -6,15 +6,16 @@ import {
   Page,
   StyleSheet,
   Font,
+  BlobProvider,
 } from "@react-pdf/renderer";
+// import{Image as PdfImage} from '@react-pdf/image'
 import TicketPdfDetail from "./TicketPdfDetail/TicketPdfDetail";
-import React, { useState, useContext ,useEffect} from "react";
+import React, { useState, useContext, useEffect } from "react";
 import logo from "./../../../imgs/tempimg/back-in-time.png";
 import vazirRegular from "./../../../fonts/fonts/ttf/Vazirmatn-Regular.ttf";
 import vazirLight from "./../../../fonts/fonts/ttf/Vazirmatn-Light.ttf";
 import sgReg from "./../../../fonts/SGKara-Regular_p30download.com.ttf";
-const TicketPdf = ({course_name,student_name,qrcode}) => {
-
+const TicketPdf = ({ course_name, student_name, qrcode }) => {
   const [detail, setDetail] = useState([
     {
       id: 2,
@@ -32,7 +33,6 @@ const TicketPdf = ({course_name,student_name,qrcode}) => {
   Font.register({ family: "Vazirmatn Light", src: vazirLight });
   Font.register({ family: "Vazirmatn Regular", src: vazirRegular });
   Font.register({ family: "SGKara Regular", src: sgReg });
-
   const style = StyleSheet.create({
     page: {
       display: "flex",
@@ -78,7 +78,7 @@ const TicketPdf = ({course_name,student_name,qrcode}) => {
       color: "#d2d2d2",
     },
     ticketHeaderHeading: {
-      fontSize: "18px",
+      fontSize: "15px",
       color: "#fff",
       fontFamily: "SGKara Regular",
     },
@@ -166,12 +166,13 @@ const TicketPdf = ({course_name,student_name,qrcode}) => {
       color: "#000 !important",
     },
   });
+
   return (
     <Document>
       <Page size={"A5"} style={style.page}>
         <View style={style.ticket}>
           <View style={style.ticketHeader}>
-            <Image source={logo} style={style.ticketHeaderImg} />
+            <Image src={logo} style={style.ticketHeaderImg} />
             <View style={style.ticketHeaderContent}>
               <Text style={style.ticketHeaderTitle}>بلیط حضور در</Text>
               <Text style={style.ticketHeaderHeading}>{course_name}</Text>
@@ -197,10 +198,7 @@ const TicketPdf = ({course_name,student_name,qrcode}) => {
           {/* --------------------------------------------------- */}
 
           <View style={style.ticketBarcode}>
-            <Image
-              source={`https://kiwi.ssceb.ir/${qrcode}`}
-              style={style.ticketBarcodeImg}
-            />
+            <Image src={{uri:qrcode}} style={style.ticketBarcodeImg} />
             <View style={style.tickeBarcodeCode}>
               <Text style={style.ticketBarcodeCodeTitle}>
                 کد رهگیری ثبت نام
