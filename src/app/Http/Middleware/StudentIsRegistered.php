@@ -19,8 +19,8 @@ class StudentIsRegistered
      */
     public function handle(Request $request, Closure $next)
     {
-        $student = $request->route()->parameter('student');
-        $course = $request->route()->parameter('course');
+        $student = $request->route()->parameter('student')->id;
+        $course = $request->route()->parameter('course')->id;
 
         $accepted = Student::whereHas('courses', function ($query) use ($course) {
             $query->where([
@@ -28,7 +28,7 @@ class StudentIsRegistered
                 'pays.status' => 'accepted'
             ]);
         })
-            ->where(['id' => $student->id])
+            ->where(['id' => $student])
             ->first();
 
         if (!$accepted) {
