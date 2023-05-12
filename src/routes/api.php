@@ -67,10 +67,7 @@ Route::controller(TicketController::class)->group(function () {
                     'student.registered',
                 ]);
             Route::get('/{student}/{course}/verify', 'verify')
-                ->name('verify')
-                ->middleware([
-                    'student.registered',
-                ]);
+                ->name('verify');
         });
     });
 });
