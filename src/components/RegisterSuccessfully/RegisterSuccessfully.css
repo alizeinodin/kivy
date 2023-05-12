@@ -40,3 +40,44 @@
   width: 90vw;
   text-align: center;
 }
+
+.RegistrationError-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+}
+.RegistrationError-header {
+  background-color: #F24F5E;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  height: 60vh;
+  width: 100%;
+}
+.RegistrationError-icon {
+  width: 128px;
+  height: 128px;
+}
+.RegistrationError-title {
+  color: #fff;
+  font-size: 32px;
+  font-family: "Vazirmatn Bold";
+}
+.RegistrationError-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  height: 40vh;
+}
+.RegistrationError-text {
+  color: #F24F5E;
+  font-size: 18px;
+  font-family: "Vazirmatn Regular";
+  width: 90vw;
+  text-align: center;
+}

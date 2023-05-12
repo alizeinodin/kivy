@@ -2,7 +2,6 @@ import RegisterFormAmir from "./components/RegisterForm/RegisterFormAmir";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import TicketPage from "./components/TicketPage/TicketPage";
 import IntroPage from "./components/IntroPage/IntroPage";
-import RegistrationError from "./components/RegistrationError/RegistrationError";
 import RegisterSuccessfully from "./components/RegisterSuccessfully/RegisterSuccessfully";
 function App() {
   return (
@@ -10,12 +9,11 @@ function App() {
       <Routes>
         <Route path="/" element={<IntroPage />} />
         <Route path="/Register/:id" element={<RegisterFormAmir />} />
-        <Route path="/Ticket/:id/:id" element={<TicketPage />} />
+        <Route path="/ticket/:id/:id" element={<TicketPage />} />
         <Route
-          path="/RegisterSuccessfully"
+          path="/ticket/:id/:id/verify"
           element={<RegisterSuccessfully />}
         />
-        <Route path="/RegistrationError" element={<RegistrationError />} />
       </Routes>
     </Router>
   );
